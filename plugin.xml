@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.noahnu.cordova.datetimepicker" version="0.0.1">
+	<name>DateTimePicker</name>
+	<description>Display native date time picker.</description>
+	<author>noahnu.com</author>
+	<license>MIT License</license>
+	<keywords>cordova,datetimepicker,date,time,picker</keywords>
+	<js-module src="www/datetimepicker.js" name="DateTimePicker">
+		<clobbers target="window.DateTimePicker" />
+	</js-module>
+	<engines>
+		<engine name="cordova" version=">=6.3.1" />
+	</engines>
+	<platform name="android">
+		<source-file src="src/android/DateTimePicker.java" target-dir="src/android/com/noahnu/cordova/datetimepicker" />
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="DateTimePicker" >
+				<param name="android-package" value="com.noahnu.cordova.datetimepicker.DateTimePicker"/>
+			</feature>
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+		</config-file>
+	</platform>
+</plugin>
